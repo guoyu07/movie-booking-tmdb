@@ -27,7 +27,7 @@ class Movie : Mappable {
     title <- map["title"]
     popularity <- map["popularity"]
     poster_path <- map["poster_path"]
-    original_language <- map["orginal_language"]
+    original_language <- map["original_language"]
     genre_ids <- map["genre_ids"]
     backdrop_path <- map["backdrop_path"]
     overview <- map["overview"]
