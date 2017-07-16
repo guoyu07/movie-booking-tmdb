@@ -6,6 +6,10 @@ target 'movie-list-tmdb' do
   use_frameworks!
 
   # Pods for movie-list-tmdb
+  pod 'Alamofire', '~> 4.5.0'
+  pod 'ObjectMapper', '~> 2.2.8'
+  pod 'AlamofireObjectMapper', '~> 4.1.0'
+  pod 'PromiseKit/Alamofire', '~> 4.2.2'
 
   target 'movie-list-tmdbTests' do
     inherit! :search_paths
