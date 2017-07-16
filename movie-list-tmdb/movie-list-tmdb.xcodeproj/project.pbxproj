@@ -15,6 +15,9 @@
 		565FB45E1F1B50B200FA5DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565FB45C1F1B50B200FA5DF1 /* LaunchScreen.storyboard */; };
 		565FB4691F1B50B200FA5DF1 /* movie_list_tmdbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FB4681F1B50B200FA5DF1 /* movie_list_tmdbTests.swift */; };
 		565FB4741F1B50B200FA5DF1 /* movie_list_tmdbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FB4731F1B50B200FA5DF1 /* movie_list_tmdbUITests.swift */; };
+		565FB4831F1B5DA200FA5DF1 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FB4821F1B5DA200FA5DF1 /* RootRouter.swift */; };
+		565FB4881F1B5E1D00FA5DF1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FB4871F1B5E1D00FA5DF1 /* Movie.swift */; };
+		565FB48B1F1B656900FA5DF1 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565FB48A1F1B656900FA5DF1 /* Genre.swift */; };
 		8281B0F8B8B130B9F9F2E2C7 /* Pods_movie_list_tmdbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DE7E6F52D79D5CAEA1A4BF /* Pods_movie_list_tmdbTests.framework */; };
 		C8E79D12BCEBEA8C044460BC /* Pods_movie_list_tmdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0CF303CE67D11C584189BC /* Pods_movie_list_tmdb.framework */; };
 		E192CCC5719719F7B659FC9E /* Pods_movie_list_tmdbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392949A8A06CFB38492FD289 /* Pods_movie_list_tmdbUITests.framework */; };
@@ -56,6 +59,9 @@
 		565FB46F1F1B50B200FA5DF1 /* movie-list-tmdbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "movie-list-tmdbUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565FB4731F1B50B200FA5DF1 /* movie_list_tmdbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie_list_tmdbUITests.swift; sourceTree = "<group>"; };
 		565FB4751F1B50B200FA5DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		565FB4821F1B5DA200FA5DF1 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		565FB4871F1B5E1D00FA5DF1 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		565FB48A1F1B656900FA5DF1 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		9668BB485C6CE8FC42DDD994 /* Pods-movie-list-tmdbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-list-tmdbTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-movie-list-tmdbTests/Pods-movie-list-tmdbTests.release.xcconfig"; sourceTree = "<group>"; };
 		9671674E2764DC29F0E921EA /* Pods-movie-list-tmdb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-list-tmdb.release.xcconfig"; path = "Pods/Target Support Files/Pods-movie-list-tmdb/Pods-movie-list-tmdb.release.xcconfig"; sourceTree = "<group>"; };
 		CB263051AAB6FC9D9C75D08A /* Pods-movie-list-tmdbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-list-tmdbUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movie-list-tmdbUITests/Pods-movie-list-tmdbUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,12 +132,13 @@
 		565FB4501F1B50B200FA5DF1 /* movie-list-tmdb */ = {
 			isa = PBXGroup;
 			children = (
-				565FB4511F1B50B200FA5DF1 /* AppDelegate.swift */,
+				565FB4851F1B5DF100FA5DF1 /* Entities */,
+				565FB4841F1B5DE300FA5DF1 /* Modules */,
+				565FB4811F1B5D7A00FA5DF1 /* Application */,
 				565FB4531F1B50B200FA5DF1 /* MasterViewController.swift */,
 				565FB4551F1B50B200FA5DF1 /* DetailViewController.swift */,
 				565FB4571F1B50B200FA5DF1 /* Main.storyboard */,
 				565FB45A1F1B50B200FA5DF1 /* Assets.xcassets */,
-				565FB45C1F1B50B200FA5DF1 /* LaunchScreen.storyboard */,
 				565FB45F1F1B50B200FA5DF1 /* Info.plist */,
 			);
 			path = "movie-list-tmdb";
@@ -153,6 +160,48 @@
 				565FB4751F1B50B200FA5DF1 /* Info.plist */,
 			);
 			path = "movie-list-tmdbUITests";
+			sourceTree = "<group>";
+		};
+		565FB4811F1B5D7A00FA5DF1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				565FB45C1F1B50B200FA5DF1 /* LaunchScreen.storyboard */,
+				565FB4511F1B50B200FA5DF1 /* AppDelegate.swift */,
+				565FB4821F1B5DA200FA5DF1 /* RootRouter.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		565FB4841F1B5DE300FA5DF1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		565FB4851F1B5DF100FA5DF1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				565FB4891F1B655500FA5DF1 /* Genre */,
+				565FB4861F1B5E0100FA5DF1 /* Movie */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		565FB4861F1B5E0100FA5DF1 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				565FB4871F1B5E1D00FA5DF1 /* Movie.swift */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		565FB4891F1B655500FA5DF1 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				565FB48A1F1B656900FA5DF1 /* Genre.swift */,
+			);
+			name = Genre;
 			sourceTree = "<group>";
 		};
 		AEFE1D976F0B7ACE26994B2E /* Pods */ = {
@@ -449,9 +498,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565FB4831F1B5DA200FA5DF1 /* RootRouter.swift in Sources */,
 				565FB4561F1B50B200FA5DF1 /* DetailViewController.swift in Sources */,
 				565FB4541F1B50B200FA5DF1 /* MasterViewController.swift in Sources */,
+				565FB48B1F1B656900FA5DF1 /* Genre.swift in Sources */,
 				565FB4521F1B50B200FA5DF1 /* AppDelegate.swift in Sources */,
+				565FB4881F1B5E1D00FA5DF1 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +758,7 @@
 				565FB47A1F1B50B200FA5DF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		565FB47B1F1B50B200FA5DF1 /* Build configuration list for PBXNativeTarget "movie-list-tmdbTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +767,7 @@
 				565FB47D1F1B50B200FA5DF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		565FB47E1F1B50B200FA5DF1 /* Build configuration list for PBXNativeTarget "movie-list-tmdbUITests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +776,7 @@
 				565FB4801F1B50B200FA5DF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
